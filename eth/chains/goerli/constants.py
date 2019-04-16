@@ -2,47 +2,47 @@ from eth_typing import BlockNumber
 
 
 # https://github.com/ethereum/EIPs/blob/master/EIPS/eip-155.md
-ROPSTEN_CHAIN_ID = 3
+GOERLI_CHAIN_ID = 5
 
 # Fork Blocks listed in ascending order
 
 #
 # DAO Block
 #
-DAO_FORK_ROPSTEN_BLOCK = BlockNumber(0)
+DAO_FORK_GOERLI_BLOCK = BlockNumber(0)
 
 
 #
 # Tangerine Whistle Block
 #
-TANGERINE_WHISTLE_ROPSTEN_BLOCK = BlockNumber(0)
+TANGERINE_WHISTLE_GOERLI_BLOCK = BlockNumber(0)
 
 
 #
 # Homestead Block
 #
-HOMESTEAD_ROPSTEN_BLOCK = BlockNumber(0)
+HOMESTEAD_GOERLI_BLOCK = BlockNumber(0)
 
 
 #
 # Spurious Dragon Block
 #
-SPURIOUS_DRAGON_ROPSTEN_BLOCK = BlockNumber(10)
+SPURIOUS_DRAGON_GOERLI_BLOCK = BlockNumber(0)
 
 
 #
 # Byzantium Block
 #
-BYZANTIUM_ROPSTEN_BLOCK = BlockNumber(1700000)
+BYZANTIUM_GOERLI_BLOCK = BlockNumber(0)
 
 
 #
 # Constantinople
 #
-CONSTANTINOPLE_ROPSTEN_BLOCK = BlockNumber(4230000)
+CONSTANTINOPLE_GOERLI_BLOCK = BlockNumber(0)
 
 
 #
 # Petersburg
 #
-PETERSBURG_ROPSTEN_BLOCK = BlockNumber(4939394)
+PETERSBURG_GOERLI_BLOCK = BlockNumber(0)
