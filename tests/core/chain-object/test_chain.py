@@ -6,6 +6,7 @@ from eth_utils import decode_hex
 from eth import constants
 from eth.chains.mainnet import MAINNET_GENESIS_HEADER
 from eth.chains.ropsten import ROPSTEN_GENESIS_HEADER
+from eth.chains.goerli import GOERLI_GENESIS_HEADER
 from eth.exceptions import (
     TransactionNotFound,
 )
@@ -94,6 +95,11 @@ def test_canonical_chain(valid_chain):
     canonical_block_1 = valid_chain.chaindb.get_canonical_block_header_by_number(
         constants.GENESIS_BLOCK_NUMBER + 1)
     assert canonical_block_1 == block.header
+
+
+def test_goerli_genesis_hash():
+    assert GOERLI_GENESIS_HEADER.hash == decode_hex(
+        '0xbf7e331f7f7c1dd2e05159666b3bf8bc7a8a3a9eb1d518969eab529dd9b88c1a')
 
 
 def test_mainnet_genesis_hash():
