@@ -252,6 +252,6 @@ def deserialize_rlp_objects(serialized_objects, rlp_class):
 
 @pytest.fixture
 def ropsten_epoch_headers():
-    rlp_path = Path(__file__).parent / 'rlp-fixtures' / 'ropston_epoch_headers.rlp'
+    rlp_path = Path(__file__).parent / 'rlp-fixtures' / 'ropsten_epoch_headers.rlp'
     encoded_headers = load_bytes_from_file(rlp_path)
     return deserialize_rlp_objects(encoded_headers, BlockHeader)
