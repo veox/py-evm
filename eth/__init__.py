@@ -13,6 +13,7 @@ setup_extended_logging()
 
 from eth.chains import (  # noqa: F401
     Chain,
+    GoerliChain,
     MainnetChain,
     MainnetTesterChain,
     RopstenChain,
