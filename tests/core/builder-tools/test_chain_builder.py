@@ -3,6 +3,7 @@ import pytest
 from eth_utils import ValidationError
 
 from eth.chains import (
+    GoerliChain,
     MainnetChain,
     MainnetTesterChain,
     RopstenChain,
@@ -242,6 +243,7 @@ def test_chain_builder_chain_split(mining_chain):
 @pytest.mark.parametrize(
     "chain",
     (
+        GoerliChain,
         MainnetChain,
         MainnetTesterChain,
         RopstenChain,
