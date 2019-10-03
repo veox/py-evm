@@ -41,8 +41,9 @@ BASE_FIXTURE_PATH = os.path.join(ROOT_PROJECT_DIR, 'fixtures', 'BlockchainTests'
 # several runs, using top N percentile to populate the list incrementally.
 # Then sort alphabetically, to reduce churn (lines just being pushed up/down).
 SLOWEST_TESTS = {
-    ('GeneralStateTests/stAttackTest/ContractCreationSpam_d0g0v0.json', 'ContractCreationSpam_d0g0v0_Frontier'),  # noqa: E501
-    ('GeneralStateTests/stAttackTest/ContractCreationSpam_d0g0v0.json', 'ContractCreationSpam_d0g0v0_Homestead'),  # noqa: E501
+    ('GeneralStateTests/stAttackTest/ContractCreationSpam.json', 'ContractCreationSpam_d0g0v0_Frontier'),  # noqa: E501
+    ('GeneralStateTests/stAttackTest/ContractCreationSpam.json', 'ContractCreationSpam_d0g0v0_Homestead'),  # noqa: E501
+    ('GeneralStateTests/stAttackTest/ContractCreationSpam.json', 'ContractCreationSpam_d0g0v0_Istanbul'),  # noqa: E501
     ('GeneralStateTests/stCallCreateCallCodeTest/Call1024BalanceTooLow_d0g0v0.json', 'Call1024BalanceTooLow_d0g0v0_Byzantium'),  # noqa: E501
     ('GeneralStateTests/stCallCreateCallCodeTest/Call1024BalanceTooLow_d0g0v0.json', 'Call1024BalanceTooLow_d0g0v0_Constantinople'),  # noqa: E501
     ('GeneralStateTests/stCallCreateCallCodeTest/Call1024BalanceTooLow_d0g0v0.json', 'Call1024BalanceTooLow_d0g0v0_ConstantinopleFix'),  # noqa: E501
@@ -70,10 +71,12 @@ SLOWEST_TESTS = {
     ('GeneralStateTests/stChangedEIP150/Callcode1024BalanceTooLow_d0g0v0.json', 'Callcode1024BalanceTooLow_d0g0v0_Constantinople'),  # noqa: E501
     ('GeneralStateTests/stChangedEIP150/Callcode1024BalanceTooLow_d0g0v0.json', 'Callcode1024BalanceTooLow_d0g0v0_ConstantinopleFix'),  # noqa: E501
     ('GeneralStateTests/stChangedEIP150/Callcode1024BalanceTooLow_d0g0v0.json', 'Callcode1024BalanceTooLow_d0g0v0_EIP150'),  # noqa: E501
-    ('GeneralStateTests/stCreate2/Create2Recursive_d0g0v0.json', 'Create2Recursive_d0g0v0_Constantinople'),  # noqa: E501
-    ('GeneralStateTests/stCreate2/Create2Recursive_d0g0v0.json', 'Create2Recursive_d0g0v0_ConstantinopleFix'),  # noqa: E501
-    ('GeneralStateTests/stCreate2/Create2Recursive_d0g1v0.json', 'Create2Recursive_d0g1v0_Constantinople'),  # noqa: E501
-    ('GeneralStateTests/stCreate2/Create2Recursive_d0g1v0.json', 'Create2Recursive_d0g1v0_ConstantinopleFix'),  # noqa: E501
+    ('GeneralStateTests/stCreate2/Create2Recursive.json', 'Create2Recursive_d0g0v0_Constantinople'),  # noqa: E501
+    ('GeneralStateTests/stCreate2/Create2Recursive.json', 'Create2Recursive_d0g0v0_ConstantinopleFix'),  # noqa: E501
+    ('GeneralStateTests/stCreate2/Create2Recursive.json', 'Create2Recursive_d0g0v0_Istanbul'),  # noqa: E501
+    ('GeneralStateTests/stCreate2/Create2Recursive.json', 'Create2Recursive_d0g1v0_Constantinople'),  # noqa: E501
+    ('GeneralStateTests/stCreate2/Create2Recursive.json', 'Create2Recursive_d0g1v0_ConstantinopleFix'),  # noqa: E501
+    ('GeneralStateTests/stCreate2/Create2Recursive.json', 'Create2Recursive_d0g1v0_Istanbul'),  # noqa: E501
     ('GeneralStateTests/stDelegatecallTestHomestead/Call1024BalanceTooLow_d0g0v0.json', 'Call1024BalanceTooLow_d0g0v0_Byzantium'),  # noqa: E501
     ('GeneralStateTests/stDelegatecallTestHomestead/Call1024BalanceTooLow_d0g0v0.json', 'Call1024BalanceTooLow_d0g0v0_Constantinople'),  # noqa: E501
     ('GeneralStateTests/stDelegatecallTestHomestead/Call1024BalanceTooLow_d0g0v0.json', 'Call1024BalanceTooLow_d0g0v0_ConstantinopleFix'),  # noqa: E501
@@ -114,36 +117,44 @@ SLOWEST_TESTS = {
     ('GeneralStateTests/stStaticCall/static_Call1MB1024Calldepth_d1g0v0.json', 'static_Call1MB1024Calldepth_d1g0v0_Byzantium'),  # noqa: E501
     ('GeneralStateTests/stStaticCall/static_Call1MB1024Calldepth_d1g0v0.json', 'static_Call1MB1024Calldepth_d1g0v0_Constantinople'),  # noqa: E501
     ('GeneralStateTests/stStaticCall/static_Call1MB1024Calldepth_d1g0v0.json', 'static_Call1MB1024Calldepth_d1g0v0_ConstantinopleFix'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000bytesContract50_1_d1g0v0.json', 'static_Call50000bytesContract50_1_d1g0v0_Byzantium'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000bytesContract50_1_d1g0v0.json', 'static_Call50000bytesContract50_1_d1g0v0_Constantinople'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000bytesContract50_1_d1g0v0.json', 'static_Call50000bytesContract50_1_d1g0v0_ConstantinopleFix'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000bytesContract50_2_d1g0v0.json', 'static_Call50000bytesContract50_2_d1g0v0_Byzantium'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000bytesContract50_2_d1g0v0.json', 'static_Call50000bytesContract50_2_d1g0v0_Constantinople'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000bytesContract50_2_d1g0v0.json', 'static_Call50000bytesContract50_2_d1g0v0_ConstantinopleFix'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_d0g0v0.json', 'static_Call50000_d0g0v0_Byzantium'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_d0g0v0.json', 'static_Call50000_d0g0v0_Constantinople'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_d0g0v0.json', 'static_Call50000_d0g0v0_ConstantinopleFix'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_d1g0v0.json', 'static_Call50000_d1g0v0_Byzantium'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_d1g0v0.json', 'static_Call50000_d1g0v0_Constantinople'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_d1g0v0.json', 'static_Call50000_d1g0v0_ConstantinopleFix'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_ecrec_d0g0v0.json', 'static_Call50000_ecrec_d0g0v0_Byzantium'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_ecrec_d0g0v0.json', 'static_Call50000_ecrec_d0g0v0_Constantinople'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_ecrec_d0g0v0.json', 'static_Call50000_ecrec_d0g0v0_ConstantinopleFix'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_ecrec_d1g0v0.json', 'static_Call50000_ecrec_d1g0v0_Byzantium'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_ecrec_d1g0v0.json', 'static_Call50000_ecrec_d1g0v0_Constantinople'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_ecrec_d1g0v0.json', 'static_Call50000_ecrec_d1g0v0_ConstantinopleFix'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_identity2_d0g0v0.json', 'static_Call50000_identity2_d0g0v0_Byzantium'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_identity2_d0g0v0.json', 'static_Call50000_identity2_d0g0v0_Constantinople'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_identity2_d0g0v0.json', 'static_Call50000_identity2_d0g0v0_ConstantinopleFix'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_identity2_d1g0v0.json', 'static_Call50000_identity2_d1g0v0_Byzantium'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_identity2_d1g0v0.json', 'static_Call50000_identity2_d1g0v0_Constantinople'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_identity2_d1g0v0.json', 'static_Call50000_identity2_d1g0v0_ConstantinopleFix'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_identity_d0g0v0.json', 'static_Call50000_identity_d0g0v0_Byzantium'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_identity_d0g0v0.json', 'static_Call50000_identity_d0g0v0_Constantinople'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_identity_d0g0v0.json', 'static_Call50000_identity_d0g0v0_ConstantinopleFix'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_identity_d1g0v0.json', 'static_Call50000_identity_d1g0v0_Byzantium'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_identity_d1g0v0.json', 'static_Call50000_identity_d1g0v0_Constantinople'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Call50000_identity_d1g0v0.json', 'static_Call50000_identity_d1g0v0_ConstantinopleFix'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000bytesContract50_1.json', 'static_Call50000bytesContract50_1_d1g0v0_Byzantium'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000bytesContract50_1.json', 'static_Call50000bytesContract50_1_d1g0v0_Constantinople'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000bytesContract50_1.json', 'static_Call50000bytesContract50_1_d1g0v0_ConstantinopleFix'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000bytesContract50_2.json', 'static_Call50000bytesContract50_2_d1g0v0_Byzantium'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000bytesContract50_2.json', 'static_Call50000bytesContract50_2_d1g0v0_Constantinople'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000bytesContract50_2.json', 'static_Call50000bytesContract50_2_d1g0v0_ConstantinopleFix'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000.json', 'static_Call50000_d0g0v0_Byzantium'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000.json', 'static_Call50000_d0g0v0_Constantinople'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000.json', 'static_Call50000_d0g0v0_ConstantinopleFix'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000.json', 'static_Call50000_d0g0v0_Istanbul'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000.json', 'static_Call50000_d1g0v0_Byzantium'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000.json', 'static_Call50000_d1g0v0_Constantinople'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000.json', 'static_Call50000_d1g0v0_ConstantinopleFix'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000.json', 'static_Call50000_d1g0v0_Istanbul'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_ecrec.json', 'static_Call50000_ecrec_d0g0v0_Byzantium'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_ecrec.json', 'static_Call50000_ecrec_d0g0v0_Constantinople'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_ecrec.json', 'static_Call50000_ecrec_d0g0v0_ConstantinopleFix'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_ecrec.json', 'static_Call50000_ecrec_d0g0v0_Instanbul'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_ecrec.json', 'static_Call50000_ecrec_d1g0v0_Byzantium'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_ecrec.json', 'static_Call50000_ecrec_d1g0v0_Constantinople'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_ecrec.json', 'static_Call50000_ecrec_d1g0v0_ConstantinopleFix'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_ecrec.json', 'static_Call50000_ecrec_d1g0v0_Istanbul'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_identity2.json', 'static_Call50000_identity2_d0g0v0_Byzantium'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_identity2.json', 'static_Call50000_identity2_d0g0v0_Constantinople'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_identity2.json', 'static_Call50000_identity2_d0g0v0_ConstantinopleFix'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_identity2.json', 'static_Call50000_identity2_d0g0v0_Istanbul'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_identity2.json', 'static_Call50000_identity2_d1g0v0_Byzantium'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_identity2.json', 'static_Call50000_identity2_d1g0v0_Constantinople'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_identity2.json', 'static_Call50000_identity2_d1g0v0_ConstantinopleFix'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_identity2.json', 'static_Call50000_identity2_d1g0v0_Istanbul'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_identity.json', 'static_Call50000_identity_d0g0v0_Byzantium'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_identity.json', 'static_Call50000_identity_d0g0v0_Constantinople'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_identity.json', 'static_Call50000_identity_d0g0v0_ConstantinopleFix'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_identity.json', 'static_Call50000_identity_d0g0v0_Istanbul'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_identity.json', 'static_Call50000_identity_d1g0v0_Byzantium'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_identity.json', 'static_Call50000_identity_d1g0v0_Constantinople'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_identity.json', 'static_Call50000_identity_d1g0v0_ConstantinopleFix'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Call50000_identity.json', 'static_Call50000_identity_d1g0v0_Istanbul'),  # noqa: E501
     ('GeneralStateTests/stStaticCall/static_Call50000_rip160_d0g0v0.json', 'static_Call50000_rip160_d0g0v0_Byzantium'),  # noqa: E501
     ('GeneralStateTests/stStaticCall/static_Call50000_rip160_d0g0v0.json', 'static_Call50000_rip160_d0g0v0_Constantinople'),  # noqa: E501
     ('GeneralStateTests/stStaticCall/static_Call50000_rip160_d0g0v0.json', 'static_Call50000_rip160_d0g0v0_ConstantinopleFix'),  # noqa: E501
@@ -162,11 +173,13 @@ SLOWEST_TESTS = {
     ('GeneralStateTests/stStaticCall/static_LoopCallsThenRevert_d0g1v0.json', 'static_LoopCallsThenRevert_d0g1v0_Byzantium'),  # noqa: E501
     ('GeneralStateTests/stStaticCall/static_LoopCallsThenRevert_d0g1v0.json', 'static_LoopCallsThenRevert_d0g1v0_Constantinople'),  # noqa: E501
     ('GeneralStateTests/stStaticCall/static_LoopCallsThenRevert_d0g1v0.json', 'static_LoopCallsThenRevert_d0g1v0_ConstantinopleFix'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Return50000_2_d0g0v0.json', 'static_Return50000_2_d0g0v0_Byzantium'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Return50000_2_d0g0v0.json', 'static_Return50000_2_d0g0v0_Constantinople'),  # noqa: E501
-    ('GeneralStateTests/stStaticCall/static_Return50000_2_d0g0v0.json', 'static_Return50000_2_d0g0v0_ConstantinopleFix'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Return50000_2.json', 'static_Return50000_2_d0g0v0_Byzantium'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Return50000_2.json', 'static_Return50000_2_d0g0v0_Constantinople'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Return50000_2.json', 'static_Return50000_2_d0g0v0_ConstantinopleFix'),  # noqa: E501
+    ('GeneralStateTests/stStaticCall/static_Return50000_2.json', 'static_Return50000_2_d0g0v0_Istanbul'),  # noqa: E501
     ('GeneralStateTests/stSystemOperationsTest/CallRecursiveBomb0_OOG_atMaxCallDepth_d0g0v0.json', 'CallRecursiveBomb0_OOG_atMaxCallDepth_d0g0v0_Frontier'),  # noqa: E501
     ('GeneralStateTests/stSystemOperationsTest/CallRecursiveBomb0_OOG_atMaxCallDepth_d0g0v0.json', 'CallRecursiveBomb0_OOG_atMaxCallDepth_d0g0v0_Homestead'),  # noqa: E501
+    ('GeneralStateTests/stTimeConsuming/CALLBlake2f_MaxRounds.json', 'CALLBlake2f_MaxRounds_d0g0v0_Istanbul'),  # noqa: E501
     ('ValidBlocks/bcStateTests/randomStatetest94.json', 'randomStatetest94_Homestead'),  # noqa: E501
     ('ValidBlocks/bcStateTests/randomStatetest94.json', 'randomStatetest94_Byzantium'),  # noqa: E501
     ('ValidBlocks/bcStateTests/randomStatetest94.json', 'randomStatetest94_Constantinople'),  # noqa: E501
