@@ -39,7 +39,7 @@ setup_DEBUG2_logging()
 
 # Uncomment this to have logs from tests written to a file.  This is useful for
 # debugging when you need to dump the VM output from test runs.
-#"""
+"""
 import datetime
 import logging
 import os
@@ -73,7 +73,7 @@ def _file_logging(request):
             yield logger
         finally:
             logger.removeHandler(handler)
-#"""
+"""
 
 
 @pytest.fixture(params=[
