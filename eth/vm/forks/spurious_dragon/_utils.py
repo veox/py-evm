@@ -46,14 +46,13 @@ def collect_touched_accounts(computation: BaseComputation,
     # collect account directly addressed
     if computation.msg.to != constants.CREATE_CONTRACT_ADDRESS:
         if computation.is_error or ancestor_had_error:
-            pass
+            # collect RIPEMD160 precompile even if ancestor computation had error, since we'll be
+            # skipping collection from children of errored-out computation otherwise;
+            # if there were no special-casing, we'd simply `pass` here
+            if computation.msg.to == THREE:
+                yield computation.msg.to
         else:
             yield computation.msg.to
-
-    # collect RIPEMD160 precompile even if ancestor computation had error, since we'll be
-    # skipping collection from children of errored-out computation otherwise
-    if computation.msg.to == THREE and (computation.is_error or ancestor_had_error):
-        yield computation.msg.to
 
     # recurse into nested computations
     for child in computation.children:
