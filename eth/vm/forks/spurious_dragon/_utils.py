@@ -18,7 +18,7 @@ THREE = force_bytes_to_address(b'\x03')
 
 @to_set
 def collect_touched_accounts(computation: BaseComputation,
-                             ancestor_had_error=False) -> Iterable[Address]:
+                             ancestor_had_error: bool = False) -> Iterable[Address]:
     """
     Collect all of the accounts that *may* need to be deleted based on
     `EIP-161 <https://eips.ethereum.org/EIPS/eip-161>`_.
